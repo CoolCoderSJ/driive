@@ -1,0 +1,181 @@
+<html class="dark bg-white dark:bg-black">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRIIVE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css?v=6" />
+    <link rel="icon" 
+      type="image/png" 
+      href="/images/logo.png">
+</head>
+
+<body>
+    <header style="position: sticky; top: 0; z-index: 999;">
+    <nav class="bg-blue-400 border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-blue-950">
+        <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+            <a href="/" class="flex items-center">
+                <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">DRIIVE </span>
+            </a>
+            <div class="flex items-center lg:order-2">
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+            </button>
+                <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+                    <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+            </div>
+            <div class="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+                    <li>
+                        <a href="#" class="block py-2 pr-4 pl-3 text-white rounded bg-primary-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#info" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Mission</a>
+                    </li>
+                    <li>
+                        <a href="#join" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Focus Areas</a>
+                    </li>
+                    <li>
+                        <a href="#team" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Team</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                    </li>
+                    <li>
+                        <a href="blog.driive.shuchir.dev" target="_blank" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <section class="bg-white dark:bg-black py-36 bg-gradient-to-b from-blue-400 to-white dark:from-blue-950 dark:to-black">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+        <h1 class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-gray-900 md:text-6xl lg:text-6xl dark:text-white">DRIIVE</h1>
+        <p class="mb-8 text-xl font-normal text-gray-800 lg:text-2xl sm:px-16 xl:px-48 dark:text-gray-300">By giving people and communities access to digital resources we are making sure <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">digital inclusion is a reality for all.</span></p>
+        <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+            <a href="#info" class="glowdark inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-primary-900 hover:bg-primary-950 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 dark:bg-primary-200 dark:hover:bg-primary-300 dark:text-black">
+                Learn more
+                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </a> 
+        </div>
+    </div>
+</section>
+<section class="bg-white dark:bg-black py-24" id="info">
+    <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 sm:py-16 lg:px-6">
+        <div class="mt-4 md:mt-0">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center"><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">About</span> Us</h1>
+            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl dark:text-white">DRIIVE is a non-profit organization <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">committed to reducing the digital divide and promoting digital equity</span>. Our organization recognizes the transformative power of technology and believes that access to digital resources should be available to everyone, regardless of their background or circumstances.
+                <br><br>In today's digital age, being connected is no longer a luxury but a necessity. Unfortunately, many individuals and communities face barriers that prevent them from accessing and harnessing the full potential of digital technologies. <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">We aim to address these disparities and create a more inclusive digital landscape.</span>
+                <br><br>At DRIIVE, we work tirelessly to bridge the digital divide by providing essential resources, education, and support. We collaborate with local communities, educational institutions, businesses, and government agencies to develop and <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">implement effective strategies that empower individuals to navigate the digital world with confidence.</span>
+                </p>
+        </div>
+    </div>
+</section>
+
+<section class="bg-white dark:bg-black" id="join">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <div class="max-w-screen-md mb-8 lg:mb-16">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">Core Focus</span> Areas</h2>
+      </div>
+      <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-2 md:gap-12 md:space-y-0">
+          <div style="display: inline-flex; justify-content: space-between; flex-direction: column;">
+            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"><i class="fa-regular fa-id-badge dark:text-white text-xl"></i></div>
+              <h3 class="mb-2 text-xl font-bold dark:text-white">Access to Technology</h3>
+              <p class="text-gray-500 dark:text-gray-400">We strive to ensure that individuals have access to affordable digital devices and reliable internet connectivity. By partnering with technology companies and organizations, we facilitate the distribution of refurbished devices and support the establishment of community centers equipped with computer labs and internet access.</p>
+          </div>
+          <div style="display: inline-flex; justify-content: space-between; flex-direction: column;">
+            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"><i class="fa-solid fa-user dark:text-white text-xl"></i></div>
+              <h3 class="mb-2 text-xl font-bold dark:text-white">Digital Literacy</h3>
+              <p class="text-gray-500 dark:text-gray-400">According to us, mastering digital literacy is the key to utilizing technology's advantages. In order to equip people with the knowledge and abilities to use technology efficiently, traverse the internet safely, and make use of digital resources for both personal and professional advancement, our organization offers complete digital literacy programs and training sessions.</p>
+          </div>
+          <div style="display: inline-flex; justify-content: space-between; flex-direction: column;">
+            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"><i class="fa-solid fa-user-group dark:text-white text-xl"></i></div>
+              <h3 class="mb-2 text-xl font-bold dark:text-white">Community Engagement</h3>
+              <p class="text-gray-500 dark:text-gray-400">We actively interact with the surrounding areas, establishing trust and gaining insight into the special requirements and difficulties that each community faces. We promote a sense of digital empowerment, collaboration, and digital inclusion as a shared duty through neighborhood-based projects, workshops, and community gatherings.</p>
+          </div>
+          <div style="display: inline-flex; justify-content: space-between; flex-direction: column;">
+            <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"><i class="fa-solid fa-building-shield dark:text-white text-xl"></i></div>
+              <h3 class="mb-2 text-xl font-bold dark:text-white">Advocacy and Policy</h3>
+              <p class="text-gray-500 dark:text-gray-400">We support measures that support accessible internet access, reduce the digital divide, and give priority to digital inclusion. Working with legislators, stakeholders, and advocacy organizations, we aim to create an environment that supports equal digital opportunities for all.</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="bg-white dark:bg-black" id="team">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6 ">
+      <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+          <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">Team</span></h2>
+      </div> 
+      <div class="flex flex-col lg:flex-row xl:flex-row gap-8">
+        <div class="w-full lg:w-2/5 xl:w-2/5 pr-10">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Founders</h2>
+        </div>
+      <div class="flex flex-col gap-8 mb-6 lg:mb-16 w-full lg:w-3/5 xl:w-3/5 pl-20">
+          <div class="items-center rounded-lg sm:flex">
+            <img class="h-32 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
+              <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <a>John Doe</a>
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">Role</span>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">optional description text goes here</p>
+                  
+              </div>
+          </div> 
+      </div>  
+      </div>
+
+      <hr class="opacity-10 mb-16">
+      <div class="flex flex-col lg:flex-row xl:flex-row gap-8">
+        <div class="w-full lg:w-2/5 xl:w-2/5 pr-10">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Our Executive Board</h2>
+        </div>
+      <div class="flex flex-col gap-8 mb-6 lg:mb-16 w-full lg:w-3/5 xl:w-3/5 pl-20">
+          <div class="items-center rounded-lg sm:flex">
+            <img class="h-32 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png" alt="Bonnie Avatar">
+              <div class="p-5">
+                  <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                      <a>John Doe</a>
+                  </h3>
+                  <span class="text-gray-500 dark:text-gray-400">Role</span>
+                  <p class="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400">optional description text goes here</p>
+              </div>
+          </div> 
+      </div>  
+      </div>
+
+  </div>
+</section>
+
+<section class="bg-white dark:bg-black" id="contact">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen flex flex-col lg:flex-row xl:flex-row gap-24" style="align-items: center;">
+            <h2 class="mb-0 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-700">Contact</span> Us</h2>
+            <div class="flex space-y-4 gap-2 flex-row sm:space-y-0 sm:space-x-4">
+                <a href="mailto:info@domain.org" style="height: fit-content;" class="mb-0 glowlesser inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <ion-icon class="mr-2" name="mail-outline"></ion-icon> email address goes here
+                </a>  
+                <a href="https://www.instagram.com/driive/" style="height: fit-content;" class="glowlesser inline-flex items-center justify-center px-4 py-2.5 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+                    <ion-icon class="mr-2" name="logo-instagram"></ion-icon> @driive
+                </a>  
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
